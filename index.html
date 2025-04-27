@@ -114,6 +114,57 @@
       src="https://help.nflxext.com/helpcenter/OneTrust/oneTrust_production/scripttemplates/202411.1.0/otBannerSdk.js"
       async=""
       type="text/javascript"></script>
+      <style>
+        /* Namespace all skeleton classes with a prefix */
+      .sk-loader-item {
+        padding: 15px;
+        margin-bottom: 20px;
+        border-radius: 4px;
+        background: #292929a6;
+        /* Adding position relative to contain children properly */
+        position: relative;
+      }
+  
+      .sk-loader-image {
+        height: 200px;
+        background: #72727246;
+        margin-bottom: 15px;
+        border-radius: 4px;
+        animation: sk-pulse 1.5s infinite ease-in-out;
+      }
+  
+      .sk-loader-text {
+        height: 20px;
+        background: #72727246;
+        margin-bottom: 10px;
+        border-radius: 4px;
+        animation: sk-pulse 1.5s infinite ease-in-out;
+      }
+  
+      .sk-loader-text-short {
+        width: 60%;
+      }
+  
+      /* Renamed animation to avoid conflicts */
+      @keyframes sk-pulse {
+        0% {
+          opacity: 0.6;
+        }
+        50% {
+          opacity: 0.8;
+        }
+        100% {
+          opacity: 0.6;
+        }
+      }
+  
+      /* Add a class to hide skeleton when content is loaded */
+      .sk-loaded .sk-loader-item,
+      .sk-loaded .sk-loader-image,
+      .sk-loaded .sk-loader-text {
+        display: none;
+      }
+      </style>
     <style data-toolkit-insertion="true"></style>
     <style
       data-rh="true"
@@ -485,7 +536,6 @@
       .anchor_styles__1h0vwqc0:not([aria-disabled]):active {
         color: #e00000;
       }
-      /*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uLy4uLy4uL25vZGVfbW9kdWxlcy9AdmFuaWxsYS1leHRyYWN0L3dlYnBhY2stcGx1Z2luL2V4dHJhY3RlZC5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLFdBQVc7RUFDWCxlQUFlO0VBQ2YsMEJBQTBCO0VBQzFCLHlCQUFpQjtVQUFqQixpQkFBaUI7QUFDbkI7O0FBQ0E7RUFDRSxhQUFhO0FBQ2Y7O0FBQ0E7RUFDRSxjQUFjO0FBQ2hCIiwic291cmNlc0NvbnRlbnQiOlsiLmFuY2hvcl9zdHlsZXNfXzFoMHZ3cWMwIHtcbiAgY29sb3I6IGJsdWU7XG4gIGN1cnNvcjogcG9pbnRlcjtcbiAgdGV4dC1kZWNvcmF0aW9uOiB1bmRlcmxpbmU7XG4gIHVzZXItc2VsZWN0OiB0ZXh0O1xufVxuLmFuY2hvcl9zdHlsZXNfXzFoMHZ3cWMwOnZpc2l0ZWQge1xuICBjb2xvcjogcHVycGxlO1xufVxuLmFuY2hvcl9zdHlsZXNfXzFoMHZ3cWMwOm5vdChbYXJpYS1kaXNhYmxlZF0pOmFjdGl2ZSB7XG4gIGNvbG9yOiAjZTAwMDAwO1xufSJdLCJzb3VyY2VSb290IjoiIn0= */
     </style>
     <style
       data-rh="true"
@@ -685,7 +735,6 @@
           background: lightgray;
         }
       }
-      /*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uLy4uLy4uL25vZGVfbW9kdWxlcy9AdmFuaWxsYS1leHRyYWN0L3dlYnBhY2stcGx1Z2luL2V4dHJhY3RlZC5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLG1CQUFtQjtFQUNuQixxQkFBcUI7RUFDckIsa0JBQWtCO0VBQ2xCLHlCQUF5QjtFQUN6QixzQkFBc0I7RUFDdEIsWUFBWTtFQUNaLGVBQWU7RUFDZixvQkFBb0I7RUFDcEIsZUFBZTtFQUNmLGdCQUFnQjtFQUNoQix1QkFBdUI7RUFDdkIsc0JBQXNCO0VBQ3RCLGNBQWM7RUFDZCxnQkFBZ0I7RUFDaEIseUJBQWlCO1VBQWpCLGlCQUFpQjtBQUNuQjs7QUFDQTtFQUNFLHNCQUFzQjtFQUN0QixtQkFBbUI7QUFDckI7O0FBQ0E7RUFDRTtJQUNFLG1CQUFtQjtJQUNuQixxQkFBcUI7RUFDdkI7QUFDRiIsInNvdXJjZXNDb250ZW50IjpbIi5idXR0b25fc3R5bGVzX18xa3dyNHltMCB7XG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gIGJhY2tncm91bmQ6IGdhaW5zYm9ybztcbiAgYm9yZGVyLXJhZGl1czogMnB4O1xuICBib3JkZXI6IDFweCBzb2xpZCBkaW1ncmF5O1xuICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xuICBjb2xvcjogYmxhY2s7XG4gIGN1cnNvcjogZGVmYXVsdDtcbiAgZGlzcGxheTogaW5saW5lLWZsZXg7XG4gIGZvbnQtc2l6ZTogMTNweDtcbiAgZm9udC13ZWlnaHQ6IDQwMDtcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gIGxldHRlci1zcGFjaW5nOiBub3JtYWw7XG4gIGxpbmUtaGVpZ2h0OiAxO1xuICBwYWRkaW5nOiAycHggN3B4O1xuICB1c2VyLXNlbGVjdDogbm9uZTtcbn1cbi5idXR0b25fc3R5bGVzX18xa3dyNHltMDpub3QoW2FyaWEtZGlzYWJsZWRdKTphY3RpdmUge1xuICBib3JkZXItY29sb3I6IGRhcmtncmF5O1xuICBiYWNrZ3JvdW5kOiAjZWNlY2VjO1xufVxuQG1lZGlhIGFsbCBhbmQgKGhvdmVyOiBob3Zlcikge1xuICAuYnV0dG9uX3N0eWxlc19fMWt3cjR5bTA6bm90KFthcmlhLWRpc2FibGVkXSk6aG92ZXIge1xuICAgIGJvcmRlci1jb2xvcjogYmxhY2s7XG4gICAgYmFja2dyb3VuZDogbGlnaHRncmF5O1xuICB9XG59Il0sInNvdXJjZVJvb3QiOiIifQ== */
     </style>
     <style
       data-rh="true"
@@ -696,7 +745,6 @@
         min-height: 16px;
         min-width: 16px;
       }
-      /*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uLy4uLy4uL25vZGVfbW9kdWxlcy9AdmFuaWxsYS1leHRyYWN0L3dlYnBhY2stcGx1Z2luL2V4dHJhY3RlZC5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGdCQUFnQjtFQUNoQixlQUFlO0FBQ2pCIiwic291cmNlc0NvbnRlbnQiOlsiLmZvcm0tY29udHJvbF9jb250cm9sV3JhcHBlclN0eWxlc19fb3k0anBxMSA+IC5pbnB1dF9uYXRpdmVFbGVtZW50U3R5bGVzX18xZXVvdWlhMCB7XG4gIG1pbi1oZWlnaHQ6IDE2cHg7XG4gIG1pbi13aWR0aDogMTZweDtcbn0iXSwic291cmNlUm9vdCI6IiJ9 */
     </style>
     <style
       data-rh="true"
@@ -8160,11 +8208,11 @@
       }
     </style>
   </head>
-  <body>
-    <div id="appMountPoint">
+  <body class="content-container">
+    <div id="netflix-home" class="content-container">
       <div>
-        <div class="basicLayout">
-          <div class="netflix-sans-font-loaded">
+        <div class="layout">
+          <div class="netflix-sans-font-loaded" id="appMountPoint">
             <div data-uia="loc" lang="en" dir="ltr">
               <div class="default-ltr-cache-qku0ge e1mo5oqu3">
                 <div class="default-ltr-cache-ht77aj e1mo5oqu0">
@@ -8177,10 +8225,10 @@
                           class="default-ltr-cache-bg95xu e1t5uncc0"></div>
                       </div>
                       <div class="default-ltr-cache-180snrw e1r6dvsr3">
-                        <div class="default-ltr-cache-lp0v6f">
+                        <div class="default-ltr-cache-lp0v6f" >
                           <div
                             data-layout="wrapper"
-                            class="layout-container_wrapperStyles__12wd1go1d default-ltr-cache-13ofoyb"
+                            class="layout-container_wrapperStyles__12wd1go1d default-ltr-cache-13ofoyb content-item"
                             dir="ltr"
                             data-uia="header">
                             <header
@@ -8270,7 +8318,7 @@
                                           d="M105.06233,14.2806261 L110.999156,30 C109.249227,29.7497422 107.500234,29.4366857 105.718437,29.1554972 L102.374168,20.4686475 L98.9371075,28.4375293 C97.2499766,28.1563408 95.5928391,28.061674 93.9057081,27.8432843 L99.9372012,14.0931671 L94.4680851,-5.68434189e-14 L99.5313525,-5.68434189e-14 L102.593495,7.87421502 L105.874965,-5.68434189e-14 L110.999156,-5.68434189e-14 L105.06233,14.2806261 Z M90.4686475,-5.68434189e-14 L85.8749649,-5.68434189e-14 L85.8749649,27.2499766 C87.3746368,27.3437061 88.9371075,27.4055675 90.4686475,27.5930265 L90.4686475,-5.68434189e-14 Z M81.9055207,26.93692 C77.7186241,26.6557316 73.5307901,26.4064111 69.250164,26.3117443 L69.250164,-5.68434189e-14 L73.9366389,-5.68434189e-14 L73.9366389,21.8745899 C76.6248008,21.9373887 79.3120255,22.1557784 81.9055207,22.2804387 L81.9055207,26.93692 Z M64.2496954,10.6561065 L64.2496954,15.3435186 L57.8442216,15.3435186 L57.8442216,25.9996251 L53.2186709,25.9996251 L53.2186709,-5.68434189e-14 L66.3436123,-5.68434189e-14 L66.3436123,4.68741213 L57.8442216,4.68741213 L57.8442216,10.6561065 L64.2496954,10.6561065 Z M45.3435186,4.68741213 L45.3435186,26.2498828 C43.7810479,26.2498828 42.1876465,26.2498828 40.6561065,26.3117443 L40.6561065,4.68741213 L35.8121661,4.68741213 L35.8121661,-5.68434189e-14 L50.2183897,-5.68434189e-14 L50.2183897,4.68741213 L45.3435186,4.68741213 Z M30.749836,15.5928391 C28.687787,15.5928391 26.2498828,15.5928391 24.4999531,15.6875059 L24.4999531,22.6562939 C27.2499766,22.4678976 30,22.2495079 32.7809542,22.1557784 L32.7809542,26.6557316 L19.812541,27.6876933 L19.812541,-5.68434189e-14 L32.7809542,-5.68434189e-14 L32.7809542,4.68741213 L24.4999531,4.68741213 L24.4999531,10.9991564 C26.3126816,10.9991564 29.0936358,10.9054269 30.749836,10.9054269 L30.749836,15.5928391 Z M4.78114163,12.9684132 L4.78114163,29.3429562 C3.09401069,29.5313525 1.59340144,29.7497422 0,30 L0,-5.68434189e-14 L4.4690224,-5.68434189e-14 L10.562377,17.0315868 L10.562377,-5.68434189e-14 L15.2497891,-5.68434189e-14 L15.2497891,28.061674 C13.5935889,28.3437998 11.906458,28.4375293 10.1246602,28.6868498 L4.78114163,12.9684132 Z"></path>
                                       </g></svg
                                     ><span
-                                      class="default-ltr-cache-18rugxg-StyledLabel ev1dnif1"
+                                      class="default-ltr-cache-18rugxg-StyledLabel ev1dnif1 content-info"
                                       >Netflix</span
                                     ></span
                                   >
@@ -8320,7 +8368,7 @@
                                         --zc08zp7: 0px;
                                       ">
                                       <a
-                                        class="pressable_styles__a6ynkg0 button_styles__1kwr4ym0 default-ltr-cache-1bex47g-StyledBaseButton e1ax5wel2"
+                                        class="pressable_styles__a6ynkg0 button_styles__1kwr4ym0 default-ltr-cache-1bex47g-StyledBaseButton e1ax5wel2 content-info"
                                         data-uia="header-login-link"
                                         dir="ltr"
                                         role="button"
@@ -8358,7 +8406,7 @@
                               </div>
                             </div>
                           </div>
-                          <div class="default-ltr-cache-15fecvd">
+                          <div class="default-ltr-cache-15fecvd real-content">
                             <div class="default-ltr-cache-2lmy8v ebqi7bx0">
                               <div class="default-ltr-cache-1n2g1u7">
                                 <div class="default-ltr-cache-vpfwpr">
@@ -8466,18 +8514,18 @@
                       </div>
                     </div>
                   </div>
-                  <div class="default-ltr-cache-w4vho9 e1mo5oqu2">
+                  <div class="default-ltr-cache-w4vho9 e1mo5oqu2 real-content">
                     <div class="default-ltr-cache-11en623 e1mo5oqu1">
                       <div
                         data-uia="nmhp-top-10"
                         class="default-ltr-cache-dn1fyv euurs4f0">
                         <div>
                           <h2
-                            class="default-ltr-cache-rl4wdc-StyledContainer euy28770">
+                            class="default-ltr-cache-rl4wdc-StyledContainer euy28770 content-info">
                             Trending Now
                           </h2>
                         </div>
-                        <div class="default-ltr-cache-fa0tl5 e190hwcp0">
+                        <div class="default-ltr-cache-fa0tl5 e190hwcp0 content-item">
                           <div class="default-ltr-cache-ut53x9">
                             <div></div>
                             <div class="default-ltr-cache-e5bvtn">
@@ -8487,7 +8535,7 @@
                                     data-uia="top-10-element-1"
                                     class="default-ltr-cache-1rddc4n e1rogofe4">
                                     <div
-                                      class="default-ltr-cache-3xjlkv e1rogofe1">
+                                      class="default-ltr-cache-3xjlkv e1rogofe1 content-info">
                                       <div
                                         class="default-ltr-cache-rd8qhi e1rogofe0"
                                         style="animation-delay: 0ms"></div>
@@ -8503,7 +8551,7 @@
                                       ><span
                                         class="default-ltr-cache-bjn8wh espbvdl0"
                                         ><span
-                                          class="default-ltr-cache-5ur8x ef2em440"
+                                          class="default-ltr-cache-5ur8x ef2em440 content-info"
                                           >1</span
                                         ><span
                                           aria-hidden="true"
@@ -8520,7 +8568,7 @@
                                     data-uia="top-10-element-2"
                                     class="default-ltr-cache-1rddc4n e1rogofe4">
                                     <div
-                                      class="default-ltr-cache-3xjlkv e1rogofe1">
+                                      class="default-ltr-cache-3xjlkv e1rogofe1 content-info">
                                       <div
                                         class="default-ltr-cache-rd8qhi e1rogofe0"
                                         style="animation-delay: 400ms"></div>
@@ -8536,7 +8584,7 @@
                                       ><span
                                         class="default-ltr-cache-bjn8wh espbvdl0"
                                         ><span
-                                          class="default-ltr-cache-5ur8x ef2em440"
+                                          class="default-ltr-cache-5ur8x ef2em440 content-info"
                                           >2</span
                                         ><span
                                           aria-hidden="true"
@@ -8553,7 +8601,7 @@
                                     data-uia="top-10-element-3"
                                     class="default-ltr-cache-1rddc4n e1rogofe4">
                                     <div
-                                      class="default-ltr-cache-3xjlkv e1rogofe1">
+                                      class="default-ltr-cache-3xjlkv e1rogofe1 content-info">
                                       <div
                                         class="default-ltr-cache-rd8qhi e1rogofe0"
                                         style="animation-delay: 800ms"></div>
@@ -8574,7 +8622,7 @@
                                         ><span
                                           aria-hidden="true"
                                           data-content="3"
-                                          class="default-ltr-cache-1j6jwcf espbvdl1"
+                                          class="default-ltr-cache-1j6jwcf espbvdl1 content-info"
                                           >3</span
                                         ></span
                                       ></span
@@ -8586,7 +8634,7 @@
                                     data-uia="top-10-element-4"
                                     class="default-ltr-cache-1rddc4n e1rogofe4">
                                     <div
-                                      class="default-ltr-cache-3xjlkv e1rogofe1">
+                                      class="default-ltr-cache-3xjlkv e1rogofe1 content-info">
                                       <div
                                         class="default-ltr-cache-rd8qhi e1rogofe0"
                                         style="animation-delay: 1200ms"></div>
@@ -8602,7 +8650,7 @@
                                       ><span
                                         class="default-ltr-cache-bjn8wh espbvdl0"
                                         ><span
-                                          class="default-ltr-cache-5ur8x ef2em440"
+                                          class="default-ltr-cache-5ur8x ef2em440 content-info"
                                           >4</span
                                         ><span
                                           aria-hidden="true"
@@ -8621,7 +8669,7 @@
                                     <div
                                       class="default-ltr-cache-3xjlkv e1rogofe1">
                                       <div
-                                        class="default-ltr-cache-rd8qhi e1rogofe0"
+                                        class="default-ltr-cache-rd8qhi e1rogofe0 content-info"
                                         style="animation-delay: 1600ms"></div>
                                       <span
                                         class="default-ltr-cache-cf8xw5 e1rogofe3"
@@ -8640,7 +8688,7 @@
                                         ><span
                                           aria-hidden="true"
                                           data-content="5"
-                                          class="default-ltr-cache-1j6jwcf espbvdl1"
+                                          class="default-ltr-cache-1j6jwcf espbvdl1 content-info"
                                           >5</span
                                         ></span
                                       ></span
@@ -8652,7 +8700,7 @@
                                     data-uia="top-10-element-6"
                                     class="default-ltr-cache-1rddc4n e1rogofe4">
                                     <div
-                                      class="default-ltr-cache-3xjlkv e1rogofe1">
+                                      class="default-ltr-cache-3xjlkv e1rogofe1 content-info">
                                       <div
                                         class="default-ltr-cache-rd8qhi e1rogofe0"
                                         style="animation-delay: 2000ms"></div>
@@ -8668,7 +8716,7 @@
                                       ><span
                                         class="default-ltr-cache-bjn8wh espbvdl0"
                                         ><span
-                                          class="default-ltr-cache-5ur8x ef2em440"
+                                          class="default-ltr-cache-5ur8x ef2em440 content-info"
                                           >6</span
                                         ><span
                                           aria-hidden="true"
@@ -8685,7 +8733,7 @@
                                     data-uia="top-10-element-7"
                                     class="default-ltr-cache-1rddc4n e1rogofe4">
                                     <div
-                                      class="default-ltr-cache-3xjlkv e1rogofe1">
+                                      class="default-ltr-cache-3xjlkv e1rogofe1 content-info">
                                       <div
                                         class="default-ltr-cache-rd8qhi e1rogofe0"
                                         style="animation-delay: 2400ms"></div>
@@ -8701,12 +8749,12 @@
                                       ><span
                                         class="default-ltr-cache-bjn8wh espbvdl0"
                                         ><span
-                                          class="default-ltr-cache-5ur8x ef2em440"
+                                          class="default-ltr-cache-5ur8x ef2em440 content-info"
                                           >7</span
                                         ><span
                                           aria-hidden="true"
                                           data-content="7"
-                                          class="default-ltr-cache-1j6jwcf espbvdl1"
+                                          class="default-ltr-cache-1j6jwcf espbvdl1 content-info"
                                           >7</span
                                         ></span
                                       ></span
@@ -8718,7 +8766,7 @@
                                     data-uia="top-10-element-8"
                                     class="default-ltr-cache-1rddc4n e1rogofe4">
                                     <div
-                                      class="default-ltr-cache-3xjlkv e1rogofe1">
+                                      class="default-ltr-cache-3xjlkv e1rogofe1 content-info">
                                       <div
                                         class="default-ltr-cache-rd8qhi e1rogofe0"
                                         style="animation-delay: 2800ms"></div>
@@ -8734,12 +8782,12 @@
                                       ><span
                                         class="default-ltr-cache-bjn8wh espbvdl0"
                                         ><span
-                                          class="default-ltr-cache-5ur8x ef2em440"
+                                          class="default-ltr-cache-5ur8x ef2em440 content-info"
                                           >8</span
                                         ><span
                                           aria-hidden="true"
                                           data-content="8"
-                                          class="default-ltr-cache-1j6jwcf espbvdl1"
+                                          class="default-ltr-cache-1j6jwcf espbvdl1 content-info"
                                           >8</span
                                         ></span
                                       ></span
@@ -8751,7 +8799,7 @@
                                     data-uia="top-10-element-9"
                                     class="default-ltr-cache-1rddc4n e1rogofe4">
                                     <div
-                                      class="default-ltr-cache-3xjlkv e1rogofe1">
+                                      class="default-ltr-cache-3xjlkv e1rogofe1 content-info">
                                       <div
                                         class="default-ltr-cache-rd8qhi e1rogofe0"
                                         style="animation-delay: 3200ms"></div>
@@ -8767,12 +8815,12 @@
                                       ><span
                                         class="default-ltr-cache-bjn8wh espbvdl0"
                                         ><span
-                                          class="default-ltr-cache-5ur8x ef2em440"
+                                          class="default-ltr-cache-5ur8x ef2em440 content-info"
                                           >9</span
                                         ><span
                                           aria-hidden="true"
                                           data-content="9"
-                                          class="default-ltr-cache-1j6jwcf espbvdl1"
+                                          class="default-ltr-cache-1j6jwcf espbvdl1 content-info"
                                           >9</span
                                         ></span
                                       ></span
@@ -8784,7 +8832,7 @@
                                     data-uia="top-10-element-10"
                                     class="default-ltr-cache-1rddc4n e1rogofe4">
                                     <div
-                                      class="default-ltr-cache-3xjlkv e1rogofe1">
+                                      class="default-ltr-cache-3xjlkv e1rogofe1 content-info">
                                       <div
                                         class="default-ltr-cache-rd8qhi e1rogofe0"
                                         style="animation-delay: 3600ms"></div>
@@ -8800,12 +8848,12 @@
                                       ><span
                                         class="default-ltr-cache-bjn8wh espbvdl0"
                                         ><span
-                                          class="default-ltr-cache-5ur8x ef2em440"
+                                          class="default-ltr-cache-5ur8x ef2em440 content-info"
                                           >10</span
                                         ><span
                                           aria-hidden="true"
                                           data-content="10"
-                                          class="default-ltr-cache-1j6jwcf espbvdl1"
+                                          class="default-ltr-cache-1j6jwcf espbvdl1 content-info"
                                           >10</span
                                         ></span
                                       ></span
@@ -8842,7 +8890,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="default-ltr-cache-dn1fyv euurs4f0">
+                      <div class="default-ltr-cache-dn1fyv euurs4f0 content-item">
                         <div
                           data-layout="wrapper"
                           class="layout-container_wrapperStyles__12wd1go1d default-ltr-cache-1u8qly9"
@@ -8874,7 +8922,7 @@
                                 --zc08zp7: 0px;
                               ">
                               <h2
-                                class="default-ltr-cache-rl4wdc-StyledContainer euy28770">
+                                class="default-ltr-cache-rl4wdc-StyledContainer euy28770 content-info">
                                 More Reasons to Join
                               </h2>
                             </div>
@@ -8953,27 +9001,27 @@
                                           ">
                                           <div
                                             data-layout="item"
-                                            class="layout-item_styles__zc08zp30 default-ltr-cache-1u8qly9"
+                                            class="layout-item_styles__zc08zp30 default-ltr-cache-1u8qly9 content-item"
                                             dir="ltr"
                                             style="
                                               --zc08zp0: calc(100% - 0px);
                                               --zc08zp7: 0px;
                                             ">
                                             <h3
-                                              class="default-ltr-cache-1rx7f2s-StyledContainer euy28770">
+                                              class="default-ltr-cache-1rx7f2s-StyledContainer euy28770 content-info">
                                               Enjoy on your TV
                                             </h3>
                                           </div>
                                           <div
                                             data-layout="item"
-                                            class="layout-item_styles__zc08zp30 default-ltr-cache-1u8qly9"
+                                            class="layout-item_styles__zc08zp30 default-ltr-cache-1u8qly9 content-item"
                                             dir="ltr"
                                             style="
                                               --zc08zp0: calc(100% - 0px);
                                               --zc08zp7: 0px;
                                             ">
                                             <p
-                                              class="default-ltr-cache-rea9us-StyledContainer euy28770">
+                                              class="default-ltr-cache-rea9us-StyledContainer euy28770 content-info">
                                               Watch on Smart TVs, Playstation,
                                               Xbox, Chromecast, Apple TV,
                                               Blu-ray players, and more.
@@ -10004,10 +10052,10 @@
                           </div>
                         </div>
                       </div>
-                      <div class="default-ltr-cache-dn1fyv euurs4f0">
+                      <div class="default-ltr-cache-dn1fyv euurs4f0 real-content">
                         <div
                           data-layout="wrapper"
-                          class="layout-container_wrapperStyles__12wd1go1d default-ltr-cache-1u8qly9"
+                          class="layout-container_wrapperStyles__12wd1go1d default-ltr-cache-1u8qly9 content-item"
                           dir="ltr"
                           data-uia="nmhp-faq">
                           <div
@@ -10029,7 +10077,7 @@
                               style="--zc08zp0: fit-content; --zc08zp7: 0px">
                               <h2
                                 data-uia="nmhp-faq-text-title"
-                                class="default-ltr-cache-rl4wdc-StyledContainer euy28770">
+                                class="default-ltr-cache-rl4wdc-StyledContainer euy28770 content-info">
                                 Frequently Asked Questions
                               </h2>
                             </div>
@@ -10048,13 +10096,13 @@
                                   dir="ltr">
                                   <h3
                                     data-uia="nmhp-faq-q-0"
-                                    class="accordion-heading_styles__199uojx0 default-ltr-cache-jq82nw-StyledAccordionHeading e164gv2o1"
+                                    class="accordion-heading_styles__199uojx0 default-ltr-cache-jq82nw-StyledAccordionHeading e164gv2o1 content-info"
                                     dir="ltr">
                                     <button
                                       aria-expanded="false"
                                       aria-controls="content--nmhp-faq-accordion--0"
                                       id="button--nmhp-faq-accordion--0"
-                                      class="pressable_styles__a6ynkg0 accordion-heading_buttonStyles__199uojx1"
+                                      class="pressable_styles__a6ynkg0 accordion-heading_buttonStyles__199uojx1 content-info"
                                       dir="ltr"
                                       data-uia="nmhp-faq-accordion+button-0"
                                       type="button">
@@ -10096,7 +10144,7 @@
                                     aria-labelledby="button--nmhp-faq-accordion--0"
                                     role="region"
                                     data-uia="nmhp-faq-a-0"
-                                    class="accordion-panel_styles__f5b0a10 accordion-panel_styles_isOpen_false__f5b0a12 default-ltr-cache-t01azi-StyledAccordionPanel e164gv2o0"
+                                    class="accordion-panel_styles__f5b0a10 accordion-panel_styles_isOpen_false__f5b0a12 default-ltr-cache-t01azi-StyledAccordionPanel e164gv2o0 content-info"
                                     dir="ltr">
                                     <span id="" data-uia=""
                                       >Netflix is a streaming service that
@@ -10123,7 +10171,7 @@
                                       aria-expanded="false"
                                       aria-controls="content--nmhp-faq-accordion--1"
                                       id="button--nmhp-faq-accordion--1"
-                                      class="pressable_styles__a6ynkg0 accordion-heading_buttonStyles__199uojx1"
+                                      class="pressable_styles__a6ynkg0 accordion-heading_buttonStyles__199uojx1 content-info"
                                       dir="ltr"
                                       data-uia="nmhp-faq-accordion+button-1"
                                       type="button">
@@ -10165,7 +10213,7 @@
                                     aria-labelledby="button--nmhp-faq-accordion--1"
                                     role="region"
                                     data-uia="nmhp-faq-a-1"
-                                    class="accordion-panel_styles__f5b0a10 accordion-panel_styles_isOpen_false__f5b0a12 default-ltr-cache-t01azi-StyledAccordionPanel e164gv2o0"
+                                    class="accordion-panel_styles__f5b0a10 accordion-panel_styles_isOpen_false__f5b0a12 default-ltr-cache-t01azi-StyledAccordionPanel e164gv2o0 content-info"
                                     dir="ltr">
                                     <span id="" data-uia=""
                                       >Watch Netflix on your smartphone, tablet,
@@ -23768,6 +23816,80 @@
               });
             } catch (e) {}
           };
+        }
+      </script>
+      <script>
+        // Function to create skeleton loaders
+        function showSkeletonLoaders(container, count) {
+          // Remove existing skeleton loaders if any
+          const existingWrapper = container.querySelector('.skeleton-wrapper');
+          if (existingWrapper) {
+            container.removeChild(existingWrapper);
+          }
+          
+          // Create wrapper for skeleton loaders
+          const skeletonWrapper = document.createElement('div');
+          skeletonWrapper.className = 'skeleton-wrapper';
+          
+          // Create the specified number of skeleton items
+          for (let i = 0; i < count; i++) {
+            const skeletonItem = document.createElement('div');
+            skeletonItem.className = 'skeleton-item';
+            
+            // Create skeleton image placeholder
+            const skeletonImage = document.createElement('div');
+            skeletonImage.className = 'skeleton-image';
+            
+            // Create skeleton text placeholders
+            const skeletonText1 = document.createElement('div');
+            skeletonText1.className = 'skeleton-text';
+            
+            const skeletonText2 = document.createElement('div');
+            skeletonText2.className = 'skeleton-text skeleton-text-short';
+            
+            // Assemble the skeleton item
+            skeletonItem.appendChild(skeletonImage);
+            skeletonItem.appendChild(skeletonText1);
+            skeletonItem.appendChild(skeletonText2);
+            
+            // Add to wrapper
+            skeletonWrapper.appendChild(skeletonItem);
+          }
+          
+          // Add to container
+          container.prepend(skeletonWrapper);
+          
+          // Hide real content if it exists
+          const contentElements = container.querySelectorAll('.content-item, .item, .product-item');
+          contentElements.forEach(item => {
+            item.classList.add('content-hidden');
+            item.classList.remove('content-visible');
+          });
+          
+          return skeletonWrapper;
+        }
+        
+        // Function to hide skeleton loaders and show real content
+        function hideSkeletonLoaders(container) {
+          // Find skeleton wrapper
+          const skeletonWrapper = container.querySelector('.skeleton-wrapper');
+          if (skeletonWrapper) {
+            skeletonWrapper.classList.add('skeleton-loaded');
+            
+            // Remove from DOM after transition
+            setTimeout(() => {
+              if (skeletonWrapper.parentNode) {
+                skeletonWrapper.parentNode.removeChild(skeletonWrapper);
+              }
+            }, 300);
+          }
+          
+          // Show real content
+          const contentElements = container.querySelectorAll('.content-item, .item, .product-item');
+          contentElements.forEach(item => {
+            item.classList.remove('content-hidden');
+            item.classList.add('content-visible');
+          });
         }
       </script>
     </div>
